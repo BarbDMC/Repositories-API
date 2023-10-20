@@ -6,7 +6,7 @@ const port = 3000;
 const filters = require('./utils/filters');
 
 app.get('/:org/popularRepos', async (req, res) => {
-  const { org } = req.query;
+  const { org } = req.params;
   const repositories = await getRepositories(org);
 
   const popularRepos = filters.popularRepos(repositories);
@@ -15,7 +15,7 @@ app.get('/:org/popularRepos', async (req, res) => {
 });
 
 app.get('/:org/lastUpdatedRepos', async (req, res) => {
-  const { org } = req.query;
+  const { org } = req.params;
   const repositories = await getRepositories(org);
 
   const lastUpdatedRepos = filters.lastUpdatedRepos(repositories);
@@ -24,7 +24,7 @@ app.get('/:org/lastUpdatedRepos', async (req, res) => {
 });
 
 app.get('/:org/totalStars', async (req, res) => {
-  const { org } = req.query;
+  const { org } = req.params;
   const repositories = await getRepositories(org);
 
   const totalStars = filters.totalStars(repositories);
