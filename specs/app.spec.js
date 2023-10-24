@@ -1,8 +1,8 @@
-describe('App', () => {
-  const app = require('../app.js');
-  const request = require('supertest');
-  const axios = require('axios');
+import app from '../app.js';
+import axios from 'axios';
+import request from 'supertest';
 
+describe('App', () => {
   jest.mock('axios');
 
   axios.get.mockResolvedValue({

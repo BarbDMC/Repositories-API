@@ -1,6 +1,7 @@
 {
     "parserOptions": {
-      "ecmaVersion": 2023
+      "ecmaVersion": 2023,
+      "sourceType": "module"
     },
     "extends": [
       "eslint:recommended",

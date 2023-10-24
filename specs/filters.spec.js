@@ -1,7 +1,8 @@
 'use strict';
 
+import { popularRepos, lastUpdatedRepos, totalStars } from "../utils/filters";
+
 describe('Filters Utils', () => {
-  const filters = require('../utils/filters.js');
 
   const repositories = [
     { name: 'repo1', stargazers_count: 6, updated_at: '2023-10-15T19:30:00Z'},
@@ -10,7 +11,7 @@ describe('Filters Utils', () => {
 
   describe('When Popular repos', () => {
     it('should return repositories with more than 5 stars', () => {
-      const popularRepositories = filters.popularRepos(repositories);
+      const popularRepositories = popularRepos(repositories);
 
       expect(popularRepositories[0].name).toBe('repo1');
       expect(popularRepositories[0].stargazers_count).toBe(6);
@@ -20,7 +21,7 @@ describe('Filters Utils', () => {
 
   describe('When Last updated repos', () => {
     it('should return last 5 updated repositories', () => {
-      const lastUpdatedRepositories = filters.lastUpdatedRepos(repositories);
+      const lastUpdatedRepositories = lastUpdatedRepos(repositories);
 
       expect(lastUpdatedRepositories[0].name).toBe('repo2');
       expect(lastUpdatedRepositories[0].stargazers_count).toBe(3);
@@ -34,7 +35,7 @@ describe('Filters Utils', () => {
 
   describe('When Total stars', () => {
     it('should return the sum of all repository stars', () => {
-      const starsSum = filters.totalStars(repositories);
+      const starsSum = totalStars(repositories);
       expect(starsSum).toBe(9);
     });
   });
