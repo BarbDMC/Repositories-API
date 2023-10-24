@@ -1,10 +1,10 @@
+import { jest } from '@jest/globals';
 import app from '../app.js';
 import axios from 'axios';
 import request from 'supertest';
 
 describe('App', () => {
-  jest.mock('axios');
-
+  axios.get = jest.fn();
   axios.get.mockResolvedValue({
     data: [
       { name: 'repo1', stargazers_count: 6 },
@@ -18,8 +18,9 @@ describe('App', () => {
         .get("/StackBuilders/popularRepos")
         .set("content-type", "application/json");
 
+
       expect(response.status).toBe(200);
-      expect(response.body.popularRepos).toHaveLength(1);
+      expect(response.body.popularRepositories).toHaveLength(1);
     });
   });
 
@@ -30,7 +31,7 @@ describe('App', () => {
         .set("content-type", "application/json");
 
       expect(response.status).toBe(200);
-      expect(response.body.lastUpdatedRepos).toHaveLength(2);
+      expect(response.body.lastUpdatedRepositories).toHaveLength(2);
     });
   });
 
@@ -40,8 +41,9 @@ describe('App', () => {
         .get("/StackBuilders/totalStars")
         .set("content-type", "application/json");
 
+
       expect(response.status).toBe(200);
-      expect(response.body.totalStars).toBe(9);
+      expect(response.body.totalStarsRepositories).toBe(9);
     });
   });
 });
