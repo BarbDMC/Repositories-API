@@ -4,11 +4,12 @@ import axios from 'axios';
 import request from 'supertest';
 
 describe('App', () => {
-  axios.get = jest.fn();
-  axios.get.mockResolvedValue({
+  const mockAxiosGet = jest.spyOn(axios, 'get');
+  
+  mockAxiosGet.mockResolvedValue({
     data: [
       { name: 'repo1', stargazers_count: 6 },
-      { name: 'repo2', stargazers_count: 3 }
+      { name: 'repo2', stargazers_count: 3 },
     ],
   });
 
