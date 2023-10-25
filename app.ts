@@ -1,5 +1,5 @@
 import express from 'express';
-import repositoriesRouter from './routes/repositoriesRouter.js';
+import repositoriesRouter from './routes/repositoriesRouter';
 
 const app = express();
 const port = 3000;

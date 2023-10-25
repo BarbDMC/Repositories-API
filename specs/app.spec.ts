@@ -1,11 +1,11 @@
 import { jest } from '@jest/globals';
-import app from '../app.js';
+import app from '../app';
 import axios from 'axios';
 import request from 'supertest';
 
 describe('App', () => {
   const mockAxiosGet = jest.spyOn(axios, 'get');
-  
+
   mockAxiosGet.mockResolvedValue({
     data: [
       { name: 'repo1', stargazers_count: 6 },
