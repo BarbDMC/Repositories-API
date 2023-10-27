@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { getPopularRepos, getLastUpdatedRepos, getTotalStars } from '../controllers/endpoints';
+import { getPopularRepos, getLastUpdatedRepos, getTotalStars } from '../controllers/repositories';
 
 const router = express.Router();
 
