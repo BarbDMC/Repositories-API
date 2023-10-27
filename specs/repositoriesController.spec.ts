@@ -6,8 +6,8 @@ describe('Repositories Controller', () => {
   const mockRepoFetcher: RepoFetcher = {
     getRepositories: async (): Promise<any> => {
       return Promise.resolve([
-        { name: 'repo1', stargazers_count: 6, updated_at: '2023-10-15T19:30:00Z'},
-        { name: 'repo2', stargazers_count: 3, updated_at: '2023-10-20T10:15:00Z' }
+        { name: 'repo1'},
+        { name: 'repo2'}
       ]);
     }
   };

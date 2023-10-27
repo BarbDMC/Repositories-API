@@ -7,10 +7,10 @@ describe('Github Fetcher', () => {
 
   mockAxiosGet.mockResolvedValue({
     data: [
-      { name: 'repo1', stargazers_count: 6 },
-      { name: 'repo2', stargazers_count: 3 },
-      { name: 'repo3', stargazers_count: 1 },
-      { name: 'repo4', stargazers_count: 2 },
+      { name: 'repo1'},
+      { name: 'repo2'},
+      { name: 'repo3'},
+      { name: 'repo4'},
     ],
   });
 
