@@ -13,7 +13,7 @@ describe('Repositories Controller', () => {
   });
 
   describe('When getPopularRepos', () => {
-    fit('should respond with 200 status and popular repositories', async () => {
+    fit('should call axios and return the popular repositories', async () => {
       const popularRepos = await getPopularRepos('StackBuilders');
 
       expect(axios.get).toHaveBeenCalledWith('https://api.github.com/orgs/StackBuilders/repos');
@@ -22,7 +22,7 @@ describe('Repositories Controller', () => {
   });
 
   describe('When getLastUpdatedRepos', () => {
-    it('should respond with 200 status and last 5 updated repositories', async () => {
+    it('should call axios and return the last updated repositories', async () => {
       const lastUpdatedRepos = await getLastUpdatedRepos('StackBuilders');
 
       expect(axios.get).toHaveBeenCalledWith('https://api.github.com/orgs/StackBuilders/repos');
@@ -31,7 +31,7 @@ describe('Repositories Controller', () => {
   });
 
   describe('When getTotalStars', () => {
-    it('should respond with 200 status and the stars sum', async () => {
+    it('should call axios and return the stars sum', async () => {
       const totalStarsRepos = await getTotalStars('StackBuilders');
 
       expect(axios.get).toHaveBeenCalledWith('https://api.github.com/orgs/StackBuilders/repos');
