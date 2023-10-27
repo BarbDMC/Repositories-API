@@ -1,10 +1,6 @@
 'use strict';
 
-interface Repository {
-  name: string,
-  stargazers_count: number;
-  updated_at: string;
-}
+import Repository from "../model/repositoryModel";
 
 export const popularRepos = (repositories: Repository[]): Repository[] =>
   repositories.filter((repo) => repo.stargazers_count > 5);

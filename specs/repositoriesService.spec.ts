@@ -1,6 +1,6 @@
 'use strict';
 
-import { popularRepos, lastUpdatedRepos, totalStars } from "../utils/filters";
+import { popularRepos, lastUpdatedRepos, totalStars } from "../services/repositoriesService";
 
 describe('Filters Utils', () => {
 
