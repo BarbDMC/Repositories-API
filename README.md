@@ -6,8 +6,10 @@ The project allows users to consult the Stack Builders repositories in the follo
 -   Repositories with more than 5 stars.
 -   Last 5 updated repositories.
 -   Sum of all repository stars.
+-   The top 5 repositories in the organization.
+-   Repositories sorted alphabetically excluding repositories with names started with "h".
 
-The project was done using the Github's public API with JavaScript, NodeJs, and Express.js.
+The project was done using the Github's public API with TypeScript, NodeJs, and Express.js.
   
  
 ## Architecture
@@ -15,12 +17,19 @@ The project was done using the Github's public API with JavaScript, NodeJs, and 
 ### Folder structure
 ```
 project-root/ 
+├── controllers / # Folder 
+├── dataAccess # Folder with data access utilities
+├── models # Folder with the interfaces to represent the data structure 
+├── routes # Folder with the defined app endpoints
+├── services # Folder with services that have specific business logic
 ├── specs/ # Folder with all project specifications 
-├── utils/ # Folder with reusable functions
+│ ├── fixtures # Folder with specs fixtures
 ├── .gitignore # Git ignore file 
 ├── README.md # The main README file 
-├── app.js # Main JavaScript file with the endpoints
+├── app.ts # Main JavaScript file with the endpoints
 ├── package.json # Node.js package configuration file
+├── nodemon.json # Nodemon configuration file
+├── tsconfig.json # TypeScript configuration file
 └── .eslintrc.json # ESLint rules configuration file 
 ```
 
@@ -57,5 +66,7 @@ The project was designed with TDD methodology (Test Driven Domain).
  - Get repositories with more than 5 stars : `http://localhost:3000/{org}/popularRepos`
  - Get last 5 updated repositories: `http://localhost:3000/{org}/lastUpdatedRepos`
  - Get sum of all repository stars: `http://localhost:3000/{org}/totalStars`
+ - Get the top 5 repositories: `http://localhost:3000/{org}/topRepos`
+ - Get repositories sorted alphabetically: `http://localhost:3000/{org}/listAlphabetically`
 
 The parameter `{org}` should be the organization name that you want to consult, example: `http://localhost:3000/StackBuilders/popularRepos`
