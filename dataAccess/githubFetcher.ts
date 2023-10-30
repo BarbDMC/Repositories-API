@@ -1,5 +1,5 @@
 import axios from 'axios';
-import RepoFetcher from '../model/repoFetcherModel';
+import RepoFetcher from '../models/repoFetcherModel';
 
 export const githubFetcher: RepoFetcher = {
   async getRepositories(org: string) {

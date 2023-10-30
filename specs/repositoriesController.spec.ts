@@ -1,7 +1,7 @@
 'use strict';
 
 import { repositories } from "./fixtures/repositories";
-import RepoFetcher from '../model/repoFetcherModel';
+import RepoFetcher from '../models/repoFetcherModel';
 import { getPopularRepos, getLastUpdatedRepos, getTotalStars, getTopRepos, getListAlphabetic } from '../controllers/repositoriesController';
 
 describe('Repositories Controller', () => {

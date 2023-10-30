@@ -1,4 +1,4 @@
-import RepoFetcher from '../model/repoFetcherModel';
+import RepoFetcher from '../models/repoFetcherModel';
 import { popularRepos, lastUpdatedRepos, totalStars , topRepos, listAlphabetically} from '../services/repositoriesService';
 
 export const getPopularRepos = async (fetch: RepoFetcher, org: string) => {

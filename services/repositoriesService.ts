@@ -1,6 +1,6 @@
 'use strict';
 
-import Repository from "../model/repositoryModel";
+import Repository from "../models/repositoryModel";
 
 export const popularRepos = (repositories: Repository[]): Repository[] =>
   repositories.filter((repo) => repo.stargazers_count > 5);
