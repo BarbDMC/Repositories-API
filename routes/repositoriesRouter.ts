@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { githubFetcher } from '../dataAccess/githubFetcher';
-import { getPopularRepos, getLastUpdatedRepos, getTotalStars } from '../controllers/repositoriesController';
+import { getPopularRepos, getLastUpdatedRepos, getTotalStars, getTopRepos, getListAlphabetic } from '../controllers/repositoriesController';
 
 const router = express.Router();
 
@@ -23,6 +23,20 @@ router.get('/:org/totalStars', async (req: Request, res: Response) => {
   const totalStarsRepositories = await getTotalStars(githubFetcher, org);
 
   res.json({ totalStarsRepositories });
+});
+
+router.get('/:org/topRepos', async (req: Request, res: Response) => {
+  const { org } = req.params;
+  const topRepositories = await getTopRepos(githubFetcher, org);
+
+  res.json({ topRepositories });
+});
+
+router.get('/:org/listAlphabetically', async (req: Request, res: Response) => {
+  const { org } = req.params;
+  const listAlphabetically = await getListAlphabetic(githubFetcher, org);
+
+  res.json({ listAlphabetically });
 });
 
 export default router;
