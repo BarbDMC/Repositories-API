@@ -1,4 +1,3 @@
-'use strict';
 
 export const repositories = [
   { name: 'repo1', stargazers_count: 6, updated_at: '2023-10-15T19:30:00Z'},

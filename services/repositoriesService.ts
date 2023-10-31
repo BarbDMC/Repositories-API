@@ -1,4 +1,3 @@
-'use strict';
 
 import Repository from "../models/repositoryModel";
 

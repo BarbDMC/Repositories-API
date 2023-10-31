@@ -1,4 +1,3 @@
-'use strict';
 
 import { repositories } from "./fixtures/repositories";
 import { popularRepos, lastUpdatedRepos, totalStars, topRepos, listAlphabetically } from "../services/repositoriesService";

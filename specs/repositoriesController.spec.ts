@@ -1,4 +1,3 @@
-'use strict';
 
 import { repositories } from "./fixtures/repositories";
 import RepoFetcher from '../models/repoFetcherModel';
