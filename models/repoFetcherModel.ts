@@ -1,5 +1,5 @@
 
-import Repository from "../models/repositoryModel";
+import { Repository } from "../models/repositoryModel";
 
 interface RepoFetcher {
   getRepositories(org: string): Promise<Repository []>;

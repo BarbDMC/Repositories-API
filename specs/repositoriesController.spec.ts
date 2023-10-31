@@ -1,5 +1,5 @@
 
-import Repository from "../models/repositoryModel";
+import {Repository} from "../models/repositoryModel";
 import { repositories } from "./fixtures/repositories";
 import RepoFetcher from '../models/repoFetcherModel';
 import { getPopularRepos, getLastUpdatedRepos, getTotalStars, getTopRepos, getListAlphabetic } from '../controllers/repositoriesController';

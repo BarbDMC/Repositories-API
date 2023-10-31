@@ -1,8 +1,12 @@
 
-interface Repository {
+export interface RepositoryJson {
   name: string,
   stargazers_count: number;
   updated_at: string;
 }
 
-export default Repository;
+export interface Repository {
+  name: string,
+  stargazersCount: number;
+  updatedAt: string;
+}

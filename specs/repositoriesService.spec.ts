@@ -8,8 +8,8 @@ describe('Repositories Service', () => {
       const popularRepositories = popularRepos(repositories);
 
       expect(popularRepositories[0].name).toBe('repo1');
-      expect(popularRepositories[0].stargazers_count).toBe(6);
-      expect(popularRepositories[0].updated_at).toBe('2023-10-15T19:30:00Z');
+      expect(popularRepositories[0].stargazersCount).toBe(6);
+      expect(popularRepositories[0].updatedAt).toBe('2023-10-15T19:30:00Z');
     });
   });
 
@@ -18,12 +18,12 @@ describe('Repositories Service', () => {
       const lastUpdatedRepositories = lastUpdatedRepos(repositories);
 
       expect(lastUpdatedRepositories[0].name).toBe('repo2');
-      expect(lastUpdatedRepositories[0].stargazers_count).toBe(3);
-      expect(lastUpdatedRepositories[0].updated_at).toBe('2023-10-20T10:15:00Z');
+      expect(lastUpdatedRepositories[0].stargazersCount).toBe(3);
+      expect(lastUpdatedRepositories[0].updatedAt).toBe('2023-10-20T10:15:00Z');
 
       expect(lastUpdatedRepositories[1].name).toBe('hrepo3');
-      expect(lastUpdatedRepositories[1].stargazers_count).toBe(20);
-      expect(lastUpdatedRepositories[1].updated_at).toBe('2023-10-20T10:15:00Z');
+      expect(lastUpdatedRepositories[1].stargazersCount).toBe(20);
+      expect(lastUpdatedRepositories[1].updatedAt).toBe('2023-10-20T10:15:00Z');
     });
   });
 
@@ -40,8 +40,8 @@ describe('Repositories Service', () => {
 
       expect(topRepositories).toHaveLength(5);
       expect(topRepositories[0].name).toBe('hrepo3');
-      expect(topRepositories[0].stargazers_count).toBe(20);
-      expect(topRepositories[0].updated_at).toBe('2023-10-20T10:15:00Z');
+      expect(topRepositories[0].stargazersCount).toBe(20);
+      expect(topRepositories[0].updatedAt).toBe('2023-10-20T10:15:00Z');
     });
   });
 

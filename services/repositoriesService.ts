@@ -1,23 +1,23 @@
 
-import Repository from "../models/repositoryModel";
+import { Repository } from "../models/repositoryModel";
 
 export const popularRepos = (repositories: Repository[]): Repository[] =>
-  repositories.filter((repo) => repo.stargazers_count > 5);
+  repositories.filter((repo) => repo.stargazersCount > 5);
 
 export const lastUpdatedRepos = (repositories: Repository[]): Repository[] => {
   const sortedRepos = repositories.sort((a, b) => {
-    return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+    return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
   });
 
   return sortedRepos.slice(0, 5);
 };
 
 export const totalStars = (repositories: Repository[]): number =>
-  repositories.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+  repositories.reduce((acc, repo) => acc + repo.stargazersCount, 0);
 
 
 export const topRepos = (repositories: Repository[]): Repository[] => {
-  const sortedRepos = repositories.sort((a, b) => b.stargazers_count - a.stargazers_count);
+  const sortedRepos = repositories.sort((a, b) => b.stargazersCount - a.stargazersCount);
 
   return sortedRepos.slice(0, 5);
 };
