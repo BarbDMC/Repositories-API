@@ -1,4 +1,5 @@
 
+import Repository from "../models/repositoryModel";
 import { repositories } from "./fixtures/repositories";
 import RepoFetcher from '../models/repoFetcherModel';
 import { getPopularRepos, getLastUpdatedRepos, getTotalStars, getTopRepos, getListAlphabetic } from '../controllers/repositoriesController';
@@ -6,7 +7,7 @@ import { getPopularRepos, getLastUpdatedRepos, getTotalStars, getTopRepos, getLi
 describe('Repositories Controller', () => {
   
   const mockRepoFetcher: RepoFetcher = {
-    getRepositories: async (): Promise<any> => {
+    getRepositories: async (): Promise<Repository []> => {
       return Promise.resolve(repositories);
     }
   };
