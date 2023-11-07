@@ -5,6 +5,7 @@
     },
     "extends": [
       "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
       "prettier"
     ],
     "env": {
@@ -15,6 +16,7 @@
     "rules": {
       "no-console": 1,
       "indent": ["error", 2],
-      "semi": ["error", "always"]
+      "semi": ["error", "always"],
+      "eol-last": ["error", "always"]
     }
-  }
+}
