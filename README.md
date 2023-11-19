@@ -1,7 +1,7 @@
 
-# Stack Builders repositories API
+# Repositories API
 
-The project allows users to consult the Stack Builders repositories in the following cases:
+The project allows users to consult repositories from any organization in the following cases:
 
 -   Repositories with more than 5 stars.
 -   Last 5 updated repositories.
